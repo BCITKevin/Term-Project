@@ -67,7 +67,7 @@ function makeDir() {
 
 makeDir();
 
-// Colour twist
+// Colour twist Version
 
 // const grayScale = (pathIn) => {
 //   fs.createReadStream(`./unzipped/${pathIn}`)
@@ -116,59 +116,6 @@ const grayScale = (pathIn, pathOut) => {
     this.pack().pipe(fs.createWriteStream(`grayscaled/${pathIn}`))
   })
 }
-
-// const grayScale = (img) => {
-//   fs.createReadStream("unzipped/" + img)
-//   .pipe(
-//     new PNG({
-//       filterType: 4,
-//     })
-//     )
-//     .on("parsed", function (pathIn, pathOut) {
-//       for (var y = 0; y < this.height; y++) {
-//         for (var x = 0; x < this.width; x++) {
-//           var idx = (this.width * y + x) << 2;
-          
-          
-//           const r = this.data[idx]
-//           const g = this.data[idx + 1]
-//           const b = this.data[idx + 2]
-//           const gray = (r + g + b) / 3;
-          
-//           this.data[idx] = gray;
-//           this.data[idx+1] = gray;
-//           this.data[idx+2] = gray
-//         }
-//       }
-//       this.pack().pipe(fs.createWriteStream("output.png"))
-//     }
-// )};
-
-// fs.createReadStream("in.png")
-// .pipe(
-//   new PNG({
-//     filterType: 4,
-//   })
-// )
-// .on("parsed", function(file) {
-//   forEach(file => {
-//     let y = 0; y < this.height; y++
-//     let x = 0; x < this.width; x++
-//     let idx = (this.width * y + x) << 2;
-//   })
-// });
-//   // for (var y = 0; y < this.height; y++) {
-//   //   for (var x = 0; x < this.width; x++) {
-//   //     var idx = (this.width * y + x) << 2;
-
-// const grayScaleHelper = (pathIn, pathOut) => {
-//   const r = this.data[idx] = 255 - this.data[idx];
-//   const g = this.data[idx + 1] = 255 - this.data[idx + 1];
-//   const b = this.data[idx + 2] = 255 - this.data[idx + 2]; 
-
-//   this.data[(min(r,g,b) + max(r,g,b)) / 2];
-//   this.pack().pipe(fs.createWriteStream("out.png"))
-// }
 
 module.exports = {
   unzip,
